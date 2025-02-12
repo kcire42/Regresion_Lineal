@@ -1,0 +1,13 @@
+pipelines = {
+    "StandardScaler": Pipeline([
+        ("scaler", StandardScaler()),
+        ("classifier", LogisticRegression(multi_class="multinomial", solver="lbfgs"))
+    ]),
+    "MinMaxScaler": Pipeline([
+        ("scaler", MinMaxScaler()),
+        ("classifier", LogisticRegression(multi_class="multinomial", solver="lbfgs"))
+    ]),
+    "Sin_escalar": Pipeline([
+        ("classifier", LogisticRegression(multi_class="multinomial", solver="lbfgs"))
+    ])
+}
