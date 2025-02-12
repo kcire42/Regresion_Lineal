@@ -11,3 +11,9 @@ pipelines = {
         ("classifier", LogisticRegression(multi_class="multinomial", solver="lbfgs"))
     ])
 }
+# 3️⃣ Entrenar y evaluar cada modelo
+for name, pipeline in pipelines.items():
+    pipeline.fit(X_train, y_train)
+    y_pred = pipeline.predict(X_test)
+    score = accuracy_score(y_test, y_pred)
+    print(f"El método con {name} obtuvo una precisión de {score:.4f}")
